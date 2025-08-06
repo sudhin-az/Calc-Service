@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-calculator/proto";
+

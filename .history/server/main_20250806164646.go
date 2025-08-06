@@ -1,0 +1,24 @@
+package server
+
+import (
+	"log"
+	"net"
+
+	"google.golang.org/grpc"
+	pb "grpc-calculator/proto"
+)
+
+func main() {
+	lis, err := net.Listen("tcp", ":8080")
+	if err != nil {
+		log.Fatalf("Failed to listen:%v", err)
+	}
+
+	grpcServer := grpc.NewServer()
+	pb.RegisterCalculatorServer(grpcServer, &CalculatorServer{})
+
+	log.Println("Service is running on port 8080........")
+	if err := grpcServer.Serve(lis); err != nil {
+		log.Fatalf("Failed to serve: %v", err)
+	}
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "grpc-calculator/proto";
+
+service Calculator {
+    rpc Add (CalcRequest)
+}
