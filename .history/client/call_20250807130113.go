@@ -30,5 +30,5 @@ func performOperations(client pb.CalculatorClient) {
 	if err != nil {
 		log.Fatalf("Could not Divide: %v", err)
 	}
-	log.Printf("Division Result: %d", divRes.Result)
+	log.Printf("Division Result: %d", d)
 }

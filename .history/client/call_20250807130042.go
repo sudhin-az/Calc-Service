@@ -28,7 +28,6 @@ func performOperations(client pb.CalculatorClient) {
 	//Division
 	divRes, err := client.Divide(ctx, &pb.CalcRequest{A: 10, B: 5})
 	if err != nil {
-		log.Fatalf("Could not Divide: %v", err)
+		log.Fatalf("Could not Divide: %v")
 	}
-	log.Printf("Division Result: %d", divRes.Result)
 }

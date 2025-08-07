@@ -8,6 +8,7 @@ package proto
 
 import (
 	context "context"
+
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -21,7 +22,6 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	Calculator_Add_FullMethodName      = "/calculator.Calculator/Add"
 	Calculator_Subtract_FullMethodName = "/calculator.Calculator/Subtract"
-	Calculator_Divide_FullMethodName   = "/calculator.Calculator/Divide"
 )
 
 // CalculatorClient is the client API for Calculator service.
@@ -64,7 +64,7 @@ func (c *calculatorClient) Subtract(ctx context.Context, in *CalcRequest, opts .
 func (c *calculatorClient) Divide(ctx context.Context, in *CalcRequest, opts ...grpc.CallOption) (*CalcResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CalcResponse)
-	err := c.cc.Invoke(ctx, Calculator_Divide_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, Calculator_Subtract_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -164,7 +164,7 @@ func _Calculator_Divide_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Calculator_Divide_FullMethodName,
+		FullMethod: Calculator_Subtract_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(CalculatorServer).Divide(ctx, req.(*CalcRequest))
@@ -188,8 +188,8 @@ var Calculator_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Calculator_Subtract_Handler,
 		},
 		{
-			MethodName: "Divide",
-			Handler:    _Calculator_Divide_Handler,
+			MethodName: "Subtract",
+			Handler:    _Calculator_Subtract_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -127,11 +127,12 @@ const file_proto_calculator_proto_rawDesc = "" +
 	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
 	"\x01b\x18\x02 \x01(\x05R\x01b\"&\n" +
 	"\fCalcResponse\x12\x16\n" +
-	"\x06result\x18\x01 \x01(\x05R\x06result2\x85\x01\n" +
+	"\x06result\x18\x01 \x01(\x05R\x06result2\xc2\x01\n" +
 	"\n" +
 	"Calculator\x128\n" +
 	"\x03Add\x12\x17.calculator.CalcRequest\x1a\x18.calculator.CalcResponse\x12=\n" +
-	"\bSubtract\x12\x17.calculator.CalcRequest\x1a\x18.calculator.CalcResponseB\x17Z\x15grpc-calculator/protob\x06proto3"
+	"\bSubtract\x12\x17.calculator.CalcRequest\x1a\x18.calculator.CalcResponse\x12;\n" +
+	"\x06Divide\x12\x17.calculator.CalcRequest\x1a\x18.calculator.CalcResponseB\x17Z\x15grpc-calculator/protob\x06proto3"
 
 var (
 	file_proto_calculator_proto_rawDescOnce sync.Once
@@ -153,10 +154,12 @@ var file_proto_calculator_proto_goTypes = []any{
 var file_proto_calculator_proto_depIdxs = []int32{
 	0, // 0: calculator.Calculator.Add:input_type -> calculator.CalcRequest
 	0, // 1: calculator.Calculator.Subtract:input_type -> calculator.CalcRequest
-	1, // 2: calculator.Calculator.Add:output_type -> calculator.CalcResponse
-	1, // 3: calculator.Calculator.Subtract:output_type -> calculator.CalcResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	0, // 2: calculator.Calculator.Divide:input_type -> calculator.CalcRequest
+	1, // 3: calculator.Calculator.Add:output_type -> calculator.CalcResponse
+	1, // 4: calculator.Calculator.Subtract:output_type -> calculator.CalcResponse
+	1, // 5: calculator.Calculator.Divide:output_type -> calculator.CalcResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name

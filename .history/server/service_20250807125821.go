@@ -21,5 +21,5 @@ func (s *CalculatorServer) Subtract(ctx context.Context, req *pb.CalcRequest) (*
 
 func (s *CalculatorServer) Divide(ctx context.Context, req *pb.CalcRequest) (*pb.CalcResponse, error) {
 	result := req.A / req.B
-	return  &pb.CalcResponse{Result: result}, nil
+	return  &pb.CalcResponse{r}
 }
